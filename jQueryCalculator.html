@@ -72,47 +72,66 @@
 
 <script type="text/javascript">
 
-// $(document).ready(function() {
+$(document).ready(function() {
 
 // Your code here...
 var num1 = "";
 var num2 = "";
 var solution = "";
-var opera = "";
 var numArray = ["0","1","2","3","4","5","6","7","8","9"];
-var opArray = ["+" , "-" , "*", "-", "^"];
+var opArray = ["+" , "-" , "*", "/", "^"];
 var whatOperator = -1;
 
 
+
+//  Operator buttons!!!
+
   $("#button-plus").on("click", function () {
+    if (num1.length > 0) {
     $("#operator").html(opArray[0]);
     whatOperator = 0;
     console.log(opArray[0]);
     console.log(whatOperator);
+    }
   });
 
   $("#button-minus").on("click", function () {
-    $("#operator").html(opArray[1]);
-    whatOperator = 1;
-    console.log(opArray[1]);
-    console.log(whatOperator);
+    if (num1.length > 0) {
+      $("#operator").html(opArray[1]);
+      whatOperator = 1;
+      console.log(opArray[1]);
+      console.log(whatOperator);
+    }
   });
 
   $("#button-multiply").on("click", function () {
-    $("#operator").html(opArray[2]);
-    whatOperator = 2;
-    
+    if (num1.length > 0) {
+      $("#operator").html(opArray[2]);
+      whatOperator = 2;
+      console.log(opArray[2]);
+      console.log(whatOperator);
+    }
   });
+
   $("#button-divide").on("click", function () {
-    $("#operator").html(opArray[3]);
-    whatOperator = 3;
-    
+    if (num1.length > 0) {
+      $("#operator").html(opArray[3]);
+      whatOperator = 3;
+      console.log(opArray[3]);
+      console.log(whatOperator);
+    }
   });
+
   $("#button-power").on("click", function (){
-    $("#operator").html(opArray[4]);
-    whatOperator = 4;
-    
+    if (num1.length > 0) {
+      $("#operator").html(opArray[4]);
+      whatOperator = 4;
+      console.log(opArray[4]);
+      console.log(whatOperator);
+    }
   });
+
+// Number Buttons!!!!
 
     $("#button-1").on("click", function () {
       if (whatOperator === -1){
@@ -240,33 +259,62 @@ var whatOperator = -1;
       }
     });
 
+    $("#button-equal").on("click", function() {
+      if (whatOperator === 0) {
+        addition();
+      } else if (whatOperator === 1) {
+        subtraction();
+      } else if (whatOperator === 2) {
+        multiplication();
+      } else if (whatOperator === 3) {
+        division();
+      } else if (whatOperator === 4) {
+        power();
+      }
+    });
+
+    $("#button-clear").on("click", function(){
+      num1 = "";
+      num2 = "";
+      solution = "";
+      whatOperator = -1;
+      clear();
+    });
+
 function addition () {
   solution = (Number(num1) + Number(num2)) +"";
-  $("#result").append(solution);
+  $("#result").html(solution);
 }
 
 function subtraction () {
   solution = (Number(num1) - Number(num2)) +"";
-  $("#result").append(solution);
+  $("#result").html(solution);
 }
 
 function multiplication () {
   solution = (Number(num1) * Number(num2)) +"";
-  $("#result").append(solution);
+  $("#result").html(solution);
 }
 
 function division () {
   solution = (Number(num1) / Number(num2)) +"";
-  $("#result").append(solution);
+  $("#result").html(solution);
 }
 
 function power () {
   solution = (Math.pow(Number(num1),Number(num2))) +"";
-  $("#result").append(solution);
+  $("#result").html(solution);
 }
 
+function clear () {
+  $("#result #first-number #second-number #operator").empty();
+  $("#result").empty();
+  $("#first-number").empty();
+  $("#second-number").empty();
+  $("#operator").empty();
+}
 
-// });
+});
 
 </script>
 
