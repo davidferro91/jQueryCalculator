@@ -72,7 +72,7 @@
 
 <script type="text/javascript">
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
 // Your code here...
 var num1 = "";
@@ -80,15 +80,45 @@ var num2 = "";
 var solution = "";
 var opera = "";
 var numArray = ["0","1","2","3","4","5","6","7","8","9"];
-var opBtnClick = false;
+var opArray = ["+" , "-" , "*", "-", "^"];
+var whatOperator = -1;
+var opBtnClick = 0;
 
-if (opBtnClick === false) {
-  
+
+  $("#button-plus").on("click", function () {
+    $("#operator").html(opArray[0]);
+    whatOperator = 0;
+    opBtnClick++;
+    console.log(opArray[0]);
+    console.log(opBtnClick);
+  });
+  $("#button-minus").on("click", function () {
+    $("#operator").html(opArray[1]);
+    whatOperator = 1;
+    opBtnClick++;
+  });
+  $("#button-multiply").on("click", function () {
+    $("#operator").html(opArray[2]);
+    whatOperator = 2;
+    opBtnClick++;
+  });
+  $("#button-divide").on("click", function () {
+    $("#operator").html(opArray[3]);
+    whatOperator = 3;
+    opBtnClick++;
+  });
+  $("#button-power").on("click", function (){
+    $("#operator").html(opArray[4]);
+    whatOperator = 4;
+    opBtnClick++;
+  });
+
+if (opBtnClick==0) {
     $("#button-1").on("click", function () {
       $("#first-number").append(numArray[1]);
       num1 = num1 + numArray[1];
       console.log(num1);
-    });
+      });
     $("#button-2").on("click", function () {
       $("#first-number").append(numArray[2]);
       num1 = num1 + numArray[2];
@@ -134,10 +164,8 @@ if (opBtnClick === false) {
       num1 = num1 + numArray[0];
       console.log(num1);
     });
-
-} 
-else { 
-    $("#button-1").on("click", function () {
+} else {
+  $("#button-1").on("click", function () {
       $("#second-number").append(numArray[1]);
       num2 = num2 + numArray[1];
       console.log(num2);
@@ -188,10 +216,34 @@ else {
       console.log(num2);
     });
 }
-        
+
+function addition () {
+  solution = (Number(num1) + Number(num2)) +"";
+  $("#result").append(solution);
+}
+
+function subtraction () {
+  solution = (Number(num1) - Number(num2)) +"";
+  $("#result").append(solution);
+}
+
+function multiplication () {
+  solution = (Number(num1) * Number(num2)) +"";
+  $("#result").append(solution);
+}
+
+function division () {
+  solution = (Number(num1) / Number(num2)) +"";
+  $("#result").append(solution);
+}
+
+function power () {
+  solution = (Number(num1) ^ Number(num2)) +"";
+  $("#result").append(solution);
+}
 
 
-});
+// });
 
 </script>
 
