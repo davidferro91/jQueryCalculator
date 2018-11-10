@@ -82,140 +82,163 @@ var opera = "";
 var numArray = ["0","1","2","3","4","5","6","7","8","9"];
 var opArray = ["+" , "-" , "*", "-", "^"];
 var whatOperator = -1;
-var opBtnClick = 0;
 
 
   $("#button-plus").on("click", function () {
     $("#operator").html(opArray[0]);
     whatOperator = 0;
-    opBtnClick++;
     console.log(opArray[0]);
-    console.log(opBtnClick);
+    console.log(whatOperator);
   });
+
   $("#button-minus").on("click", function () {
     $("#operator").html(opArray[1]);
     whatOperator = 1;
-    opBtnClick++;
+    console.log(opArray[1]);
+    console.log(whatOperator);
   });
+
   $("#button-multiply").on("click", function () {
     $("#operator").html(opArray[2]);
     whatOperator = 2;
-    opBtnClick++;
+    
   });
   $("#button-divide").on("click", function () {
     $("#operator").html(opArray[3]);
     whatOperator = 3;
-    opBtnClick++;
+    
   });
   $("#button-power").on("click", function (){
     $("#operator").html(opArray[4]);
     whatOperator = 4;
-    opBtnClick++;
+    
   });
 
-if (opBtnClick==0) {
     $("#button-1").on("click", function () {
-      $("#first-number").append(numArray[1]);
-      num1 = num1 + numArray[1];
-      console.log(num1);
-      });
-    $("#button-2").on("click", function () {
-      $("#first-number").append(numArray[2]);
-      num1 = num1 + numArray[2];
-      console.log(num1);
-    });
-    $("#button-3").on("click", function () {
-      $("#first-number").append(numArray[3]);
-      num1 = num1 + numArray[3];
-      console.log(num1);
-    });
-    $("#button-4").on("click", function () {
-      $("#first-number").append(numArray[4]);
-      num1 = num1 + numArray[4];
-      console.log(num1);
-    });
-    $("#button-5").on("click", function () {
-      $("#first-number").append(numArray[5]);
-      num1 = num1 + numArray[5];
-      console.log(num1);
-    });
-    $("#button-6").on("click", function () {
-      $("#first-number").append(numArray[6]);
-      num1 = num1 + numArray[6];
-      console.log(num1);
-    });
-    $("#button-7").on("click", function () {
-      $("#first-number").append(numArray[7]);
-      num1 = num1 + numArray[7];
-      console.log(num1);
-    });
-    $("#button-8").on("click", function () {
-      $("#first-number").append(numArray[8]);
-      num1 = num1 + numArray[8];
-      console.log(num1);
-    });
-    $("#button-9").on("click", function () {
-      $("#first-number").append(numArray[9]);
-      num1 = num1 + numArray[9];
-      console.log(num1);
-    });
-    $("#button-0").on("click", function () {
-      $("#first-number").append(numArray[0]);
-      num1 = num1 + numArray[0];
-      console.log(num1);
-    });
-} else {
-  $("#button-1").on("click", function () {
+      if (whatOperator === -1){
+        $("#first-number").append(numArray[1]);
+        num1 = num1 + numArray[1];
+        console.log(num1);
+        console.log(whatOperator);
+      } else {
       $("#second-number").append(numArray[1]);
-      num2 = num2 + numArray[1];
-      console.log(num2);
+        num2 = num2 + numArray[1];
+        console.log(num2);
+        console.log(whatOperator);
+      }
     });
+
     $("#button-2").on("click", function () {
-      $("#second-number").append(numArray[2]);
-      num2 = num2 + numArray[2];
-      console.log(num2);
+      if (whatOperator === -1) {
+        $("#first-number").append(numArray[2]);
+        num1 = num1 + numArray[2];
+        console.log(num1);
+        console.log(whatOperator);
+      } else {
+        $("#second-number").append(numArray[2]);
+        num2 = num2 + numArray[2];
+        console.log(num2);
+        console.log(whatOperator);
+      }
     });
+
     $("#button-3").on("click", function () {
-      $("#second-number").append(numArray[3]);
-      num2 = num2 + numArray[3];
-      console.log(num2);
+      if (whatOperator === -1) {
+        $("#first-number").append(numArray[3]);
+        num1 = num1 + numArray[3];
+        console.log(num1);
+        console.log(whatOperator);
+      } else {
+        $("#second-number").append(numArray[3]);
+        num2 = num2 + numArray[3];
+        console.log(num2);
+        console.log(whatOperator);
+      }
     });
+
     $("#button-4").on("click", function () {
-      $("#second-number").append(numArray[4]);
-      num2 = num2 + numArray[4];
-      console.log(num2);
+      if (whatOperator ===- 1) {
+        $("#first-number").append(numArray[4]);
+        num1 = num1 + numArray[4];
+        console.log(num1);
+      } else {
+        $("#second-number").append(numArray[4]);
+        num2 = num2 + numArray[4];
+        console.log(num2);
+      }
     });
+
     $("#button-5").on("click", function () {
-      $("#second-number").append(numArray[5]);
-      num2 = num2 + numArray[5];
-      console.log(num2);
+      if (whatOperator === -1) {
+        $("#first-number").append(numArray[5]);
+        num1 = num1 + numArray[5];
+        console.log(num1);
+      } else {
+        $("#second-number").append(numArray[5]);
+        num2 = num2 + numArray[5];
+        console.log(num2);
+      }
     });
+
     $("#button-6").on("click", function () {
-      $("#second-number").append(numArray[6]);
-      num2 = num2 + numArray[6];
-      console.log(num2);
+      if (whatOperator === -1) {
+        $("#first-number").append(numArray[6]);
+        num1 = num1 + numArray[6];
+        console.log(num1);
+      } else {
+        $("#second-number").append(numArray[6]);
+        num2 = num2 + numArray[6];
+        console.log(num2);
+      }
     });
+
     $("#button-7").on("click", function () {
-      $("#second-number").append(numArray[7]);
-      num2 = num2 + numArray[7];
-      console.log(num2);
+      if (whatOperator === -1) {
+        $("#first-number").append(numArray[7]);
+        num1 = num1 + numArray[7];
+        console.log(num1);
+      } else {
+        $("#second-number").append(numArray[7]);
+        num2 = num2 + numArray[7];
+        console.log(num2);
+      }
     });
+
     $("#button-8").on("click", function () {
-      $("#second-number").append(numArray[8]);
-      num2 = num2 + numArray[8];
-      console.log(num2);
+      if (whatOperator === -1) {
+        $("#first-number").append(numArray[8]);
+        num1 = num1 + numArray[8];
+        console.log(num1);
+      } else {
+        $("#second-number").append(numArray[8]);
+        num2 = num2 + numArray[8];
+        console.log(num2);
+      }
     });
+
     $("#button-9").on("click", function () {
-      $("#second-number").append(numArray[9]);
-      num2 = num2 + numArray[9];
-      console.log(num2);
+      if (whatOperator === -1) {
+        $("#first-number").append(numArray[9]);
+        num1 = num1 + numArray[9];
+        console.log(num1);
+      } else {
+        $("#second-number").append(numArray[9]);
+        num2 = num2 + numArray[9];
+        console.log(num2);
+      }
     });
+
     $("#button-0").on("click", function () {
-      $("#second-number").append(numArray[0]);
-      num2 = num2 + numArray[0];
-      console.log(num2);
+      if (whatOperator === -1) {
+        $("#first-number").append(numArray[0]);
+        num1 = num1 + numArray[0];
+        console.log(num1);
+      } else {
+        $("#second-number").append(numArray[0]);
+        num2 = num2 + numArray[0];
+        console.log(num2);
+      }
     });
-}
 
 function addition () {
   solution = (Number(num1) + Number(num2)) +"";
@@ -238,7 +261,7 @@ function division () {
 }
 
 function power () {
-  solution = (Number(num1) ^ Number(num2)) +"";
+  solution = (Math.pow(Number(num1),Number(num2))) +"";
   $("#result").append(solution);
 }
 
